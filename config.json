@@ -1,0 +1,56 @@
+{
+  "author": "Ainz",
+  "version": "1.5.1",
+  "approval": false,
+  "adminOnly": true,
+  "autoCreateDB": true,
+  "DeveloperMode": false,
+  "autoClean": true,
+  "allowInbox": false,
+  "language": "en",
+  "BOTOWNER": "Ainz Developer",
+  "BOTNAME": "ainz",
+  "note": "make sure that the bot name is all lowercase",
+  "PREFIX": "+",
+  "OPERATOR": [
+    "100092359574131"
+  ],
+  "ADMINBOT": [
+    "100092359574131"
+  ],
+  "OWNERLINK": "https://www.facebook.com/profile.php?id=100092359574131",
+  "OWNERNAME": "Ber",
+  "notifications": false,
+  "encryptSt": false,
+  "commandDisabled": [],
+  "eventDisabled": [],
+  "FB_CHAT_API_OPTIONS": {
+    "forceLogin": true,
+    "listenEvents": true,
+    "autoMarkDelivery": false,
+    "autoMarkRead": false,
+    "pauseLog": true,
+    "logLevel": "silent",
+    "selfListen": false,
+    "online": false,
+    "userAgent": "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 OPR/84.0.4316.21"
+  },
+  "DATABASE": {
+    "sqlite": {
+      "storage": "𝙱𝙾𝚃_𝙳𝙰𝚃𝙰𝙱𝙰𝚂𝙴/𝚊𝚒𝚗𝚣.sqlite"
+    }
+  },
+  "APPSTATEPATH": "../../facebookstate.json",
+  "help": {
+    "autoUnsend": false,
+    "delayUnsend": 60
+  },
+  "play": {
+    "YOUTUBE_API": "AIzaSyCbuOQhSRjfdkLOXkhyEo3nzbUHvQRsgkk",
+    "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
+  },
+  "logs": {
+    "enable": true
+  },
+  "maintenanceMode": true
+}

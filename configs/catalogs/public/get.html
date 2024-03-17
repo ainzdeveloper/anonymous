@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 400px;
+  margin: 100px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #007bff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label-text {
+  font-weight: bold;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border: none;
+}
+
+.input-group-text i {
+  color: #007bff;
+}
+
+.input-group input[type="text"] {
+  padding-left: 35px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+}
+
+.countdown {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 20px;
+    border-radius: 0;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h2 class="mb-4">Access Key Login</h2>
+  <form id="loginForm">
+    <div class="form-group">
+      <label for="accessKey" class="label-text">Access Key:</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fas fa-key"></i></span>
+        <input type="text" id="accessKey" name="accessKey" class="form-control" placeholder="Enter Access Key" required>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Enter</button>
+  </form>
+  <div id="errorMessage" class="error-message mt-3"></div>
+</div>
+<div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-body">
+    Redirecting in <span id="countdown">60</span> seconds...
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#loginForm').submit(function(e) {
+    e.preventDefault(); // Prevent form submission
+    
+    // Get input value
+    var accessKey = $('#accessKey').val();
+    
+    // Check if access key is correct
+    if (accessKey === '75968986549') {
+      // Show success toast
+      $('#toast').show();
+      
+      // Redirect after 5 seconds
+      var countdown = 5;
+      var interval = setInterval(function() {
+        countdown--;
+        $('#countdown').text(countdown);
+        if (countdown <= 0) {
+          clearInterval(interval);
+          window.location.href = 'main.html';
+        }
+      }, 1000);
+    } else {
+      displayErrorMessage('Invalid access key. Please try again.');
+    }
+  });
+});
+
+function displayErrorMessage(message) {
+  var errorMessageElement = $('#errorMessage');
+  errorMessageElement.text(message);
+  errorMessageElement.show();
+  setTimeout(function() {
+    errorMessageElement.hide();
+  }, 3000); // Hide error message after 3 seconds
+}
+</script>
+</body>
+</html>
